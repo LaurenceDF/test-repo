@@ -4,12 +4,34 @@ let h = window.innerHeight;
 let num = 100;
 let range = 20;
 
+let amp;
+
 let ax = [];
 let ay = [];
+
+let wave;
+let button;
+let playing = false;
+let env;
 
 function setup() {
   frameRate(20);
   canvas = createCanvas(w, h);
+
+  env = new p5.Env();
+  env.setADSR(0.05, 0.1, 0.5, 1);
+  env.setRange(1.2, 0);
+
+  wave = new p5.Oscillator();
+
+  wave.setType('sine');
+  wave.start();
+  wave.freq(440);
+  wave.amp(env);
+
+  button = createButton('play');
+  button.mousePressed(toggle);
+
 }
 
 function mousePressed() {
@@ -65,3 +87,7 @@ window.onresize = function () {
   h = window.innerHeight;
   canvas = createCanvas(w, h);
 };
+
+function toggle(){
+  env.play();
+}
