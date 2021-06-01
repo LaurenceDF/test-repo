@@ -32,6 +32,11 @@ function setup() {
   button = createButton('play');
   button.mousePressed(toggle);
 
+  attackTimeDiv = createDiv('attack time');
+  attackTimeDiv.style('left', '39%');
+  attackTimeSlider = createSlider(0, 1 ,0.350, 0.025);
+
+
 }
 
 function mousePressed() {
