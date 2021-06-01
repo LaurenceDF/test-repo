@@ -2,12 +2,12 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #171b21;
+    background-color: #000000;
 }
 
 button {
     margin: 20px;
-    color: #42464d;
+    color: #8d1d1d;
     width: 150px;
     height: 35px;
     font-family: "Monaco";
